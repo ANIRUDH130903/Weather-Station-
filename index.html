@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Station</title>
+
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        /* Style for the chart container */
+        #weather-chart {
+            width: 100%;
+            height: 400px; /* Adequate size for the chart */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Station</h1>
+        <p id="temperature">Temperature: Loading...</p>
+        <p id="humidity">Humidity: Loading...</p>
+        <p id="predicted_temp">Predicted Temp: Loading...</p>
+        <p id="feels_like">Feels Like: Loading...</p>
+        <p id="dew_point">Dew Point: Loading...</p>
+        <p id="condition">Condition: Loading...</p>
+        <p id="alert">Alert: Loading...</p>
+        <p id="time">Updated at: Loading...</p>
+
+        <!-- Button to trigger Text-to-Speech -->
+        <button id="speak-button">🔊 Speak Temperature</button>
+
+        <!-- Chart Section (Canvas for Chart.js) -->
+        <div id="weather-chart">
+            <canvas id="temperatureChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Link to the JavaScript file -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
